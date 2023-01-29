@@ -11,23 +11,23 @@ const deviceSchema = new Schema(
             type: String
         },
         w: {
-            type: String,
+            type: Number,
             required: true,
             maxlength: 32,
         },
         h: {
             type: String,
         },
-        p1:{
-            type: String,
+        p1: {
+            type: Number,
 
         },
-        p25:{
-            type: String,
+        p25: {
+            type: Number,
 
         },
-        p10:{
-            type: String,
+        p10: {
+            type: Number,
 
         },
     },

@@ -2,12 +2,14 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const { check } = require('express-validator')
 const { isAuthenticated } = require('../middleware')
-const { dataParameter, allData } = require('../controller/dataController')
+const { allData, data_based_on_time, data_based_on_quarter } = require('../controller/dataController')
 const router = express.Router()
 
-router.get('/particle/:particle', isAuthenticated, dataParameter);
+router.post('/time',  data_based_on_time)
 
-router.get('/allData', isAuthenticated , allData)
+router.post('/quarter',  data_based_on_quarter)
+
+router.get('/allData', isAuthenticated, allData)
 
 
 

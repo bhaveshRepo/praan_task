@@ -8,13 +8,16 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        email:{
+        email: {
             type: String,
             required: true,
         },
-        password:{
+        password: {
             type: String,
             required: true
+        },
+        salt: {
+            type: String
         }
     },
     {

@@ -1,5 +1,4 @@
 const express = require('express')
-const jwt = require('jsonwebtoken')
 const { check } = require('express-validator')
 const { signIn, signUp } = require('../controller/authController')
 const router = express.Router()
