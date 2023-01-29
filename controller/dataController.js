@@ -2,7 +2,7 @@ var csv = require('csvtojson')
 
 var deviceSchema = require('../model/device')
 
-exports.data_based_on_quarter = async (req, res) => {
+exports.data_based_on_quarter = async (req, res) => {// retrieving data on hourly basis
     let { from, to } = req.body
     try {
         let data = await deviceSchema.find({ t: { $gte: from, $lte: to } }).exec()
@@ -12,7 +12,7 @@ exports.data_based_on_quarter = async (req, res) => {
     }
 }
 
-exports.data_based_on_time = async (req, res) => {
+exports.data_based_on_time = async (req, res) => { // based on particular time 
 
     let { from } = req.body
     try {

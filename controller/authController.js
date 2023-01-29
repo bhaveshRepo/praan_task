@@ -66,7 +66,6 @@ exports.signIn = (req, res) => {
       .digest('hex')
 
     if (user.password != hash) {
-      res.clearCookie('token')
       return res.status(401).json({
         error: "Email and password do not match",
       });
@@ -74,8 +73,6 @@ exports.signIn = (req, res) => {
 
 
     const token = jwt.sign({ _id: user._id, _user: user.username }, process.env.JWT_KEY, { expiresIn: '1h' })
-
-    res.cookie('token', token)
 
     // sending response to Client
     let { _id, username, email } = user;

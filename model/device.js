@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const deviceSchema = new Schema(
+const deviceSchema = new Schema( // 
     {
         device: {
             type: String,
